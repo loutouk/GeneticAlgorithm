@@ -11,6 +11,10 @@ public class Main {
 
 
         // Graph of f(x) = 4+5x-2x^2+7x^3
+        // Let suppose we can guess how many degrees the equation got by visualizing the number of curves
+        // The degree of the polynomial is hard coded in the variable defaultGeneLength of the IndividualExample class
+        // so for this one we put IndividualExample = 4 (the constant + 3 degrees)
+
         Vec2d[] graph = new Vec2d[100];
         for(int i=0 ; i<graph.length ; i++){
             graph[i] = new Vec2d();
