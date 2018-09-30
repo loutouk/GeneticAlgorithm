@@ -5,7 +5,7 @@ package GeneticAlgorithmPolynomial; /**
 
 import java.util.Random;
 
-public class GUI {
+public class CUI {
 
     public static void main(String[] args) {
 
