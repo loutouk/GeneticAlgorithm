@@ -1,4 +1,4 @@
-/**
+package GeneticAlgorithmPolynomial; /**
  * Louis Boursier
  * 30/09/2018
  */

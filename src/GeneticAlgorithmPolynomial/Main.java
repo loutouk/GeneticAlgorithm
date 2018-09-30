@@ -1,4 +1,4 @@
-/**
+package GeneticAlgorithmPolynomial; /**
  * Louis Boursier
  * 30/09/2018
  */
@@ -12,14 +12,14 @@ public class Main {
 
         // Graph of f(x) = 4+5x-2x^2+7x^3-4x^4
         // Let suppose we can guess how many degrees the equation got by visualizing the number of curves
-        // The degree of the polynomial is hard coded in the variable defaultGeneLength of the IndividualExample class
+        // The degree of the polynomial is hard coded in the variable defaultGeneLength of the GeneticAlgorithmPolynomial.IndividualExample class
         // So for this one we put defaultGeneLength = 5 (the constant + 4 degrees)
         // Or we can also put a large number of degrees, and let the algorithm find by itself
         // If we specify defaultGeneLength = 10 : 4 + 5x + -2x^2 + 7x^3 + -4x^4 + 0x^5 + 0x^6 + 0x^7 + 0x^8 + 0x^9
         // We can see that the algorithm uses a 0 coefficient, but this method is less efficient
         // It should be use when we have no idea about the degree of the function, so we put a large value for defaultGeneLength
 
-        // For solving this solution, we can use a MAX_COEFFICIENT (IndividualExample class) of 10
+        // For solving this solution, we can use a MAX_COEFFICIENT (GeneticAlgorithmPolynomial.IndividualExample class) of 10
         // indeed, the max coefficient of our equation is 7 for 7x^3
         // The higher the value MAX_COEFFICIENT is, the harder it is for the algorithm to find the solution
 
@@ -41,7 +41,7 @@ public class Main {
         while (generationCount<2000 && Math.round(myPop.getFittest().getFitness()) != 0) {
             generationCount++;
             //System.out.println("Generation: " + generationCount + " Fittest: " + myPop.getFittest().getFitness());
-            //IndividualExample current = (IndividualExample) myPop.getFittest();
+            //GeneticAlgorithmPolynomial.IndividualExample current = (GeneticAlgorithmPolynomial.IndividualExample) myPop.getFittest();
             //System.out.println(current.getGenes());
             myPop = Algorithm.evolvePopulation(myPop);
         }
