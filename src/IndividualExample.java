@@ -7,15 +7,19 @@ import java.util.Random;
 
 public class IndividualExample extends Individual {
 
-    private static int defaultGeneLength = 4;
+    // number of degrees for the polynomial
+    // the larger it is, the harder it is to find the solution
+    private static int defaultGeneLength = 10;
+    // the maximum absolute value of the possible coefficients
+    // the larger it is, the harder it is to find the solution
+    private static final int MAX_COEFFICIENT = 10;
     private Polynomial genes;
-    // Cache
-    private double fitness = 0;
+    private double fitness = -1;
 
     public IndividualExample(){
         int[] array = new int[defaultGeneLength];
         for (int i = 0; i < defaultGeneLength; i++) {
-            int value = getRandom(-10,10);
+            int value = getRandom(-MAX_COEFFICIENT,MAX_COEFFICIENT);
             array[i] = value;
         }
         genes = new Polynomial(array);
@@ -25,7 +29,7 @@ public class IndividualExample extends Individual {
     public void generateIndividual() {
         int[] array = new int[defaultGeneLength];
         for (int i = 0; i < defaultGeneLength; i++) {
-            int value = getRandom(-10,10);
+            int value = getRandom(-MAX_COEFFICIENT,MAX_COEFFICIENT);
             array[i] = value;
         }
         genes = new Polynomial(array);
@@ -43,7 +47,7 @@ public class IndividualExample extends Individual {
 
     public void setGene(int index, int value) {
         genes.setTerm(index, value);
-        fitness = 0;
+        fitness = -1;
     }
 
     /* Public methods */
@@ -52,7 +56,7 @@ public class IndividualExample extends Individual {
     }
 
     public double getFitness() {
-        if (fitness == 0) {
+        if (fitness == -1) {
             fitness = FitnessCalc.getFitness(this);
         }
         return fitness;
@@ -84,7 +88,7 @@ public class IndividualExample extends Individual {
         for (int i = 0; i < this.genes.size(); i++) {
             if (Math.random() <= Algorithm.mutationRate) {
                 // Create random gene
-                int value = getRandom(-10,10);
+                int value = getRandom(-MAX_COEFFICIENT,MAX_COEFFICIENT);
                 this.setGene(i, value);
             }
         }
