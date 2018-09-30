@@ -1,7 +1,5 @@
 package ac.essex.graphing.plotting;
 
-import ac.essex.graphing.plotting.Plotter;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Vector;
@@ -27,8 +25,8 @@ import java.util.Vector;
  * </p>
  *
  * @author Olly Oechsle, University of Essex
- * @see ac.essex.graphing.plotting.PlotSettings
  * @version 1.1
+ * @see ac.essex.graphing.plotting.PlotSettings
  */
 
 public class Graph {
@@ -46,6 +44,13 @@ public class Graph {
      * by a PlotArea object.
      */
     public PlotSettings plotSettings;
+    protected double plotRangeX, plotRangeY;
+    /**
+     * How many pixels are there available to use in the graph?
+     * This is the size of the image minus the border size.
+     */
+    protected int chartWidth, chartHeight;
+    protected double unitsPerPixelX, unitsPerPixelY;
 
     /**
      * Initialises the graph with the plot settings to use.
@@ -55,19 +60,9 @@ public class Graph {
         this.plotSettings = p;
     }
 
-    protected double plotRangeX, plotRangeY;
-
-    /**
-     * How many pixels are there available to use in the graph?
-     * This is the size of the image minus the border size.
-     */
-    protected int chartWidth, chartHeight;
-
-    protected double unitsPerPixelX, unitsPerPixelY;
-
     /**
      * Draws the graph using a graphics object.
-     *
+     * <p>
      * Note, X axis labels come from the first function (this only applies to discrete functions)
      *
      * @param g      The graphics context on which to draw

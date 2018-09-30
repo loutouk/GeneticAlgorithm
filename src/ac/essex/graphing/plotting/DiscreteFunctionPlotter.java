@@ -16,7 +16,7 @@ package ac.essex.graphing.plotting;
  * @author Olly Oechsle, University of Essex, Date: 13-Jun-2007
  * @version 1.0
  */
-public abstract class DiscreteFunctionPlotter extends Plotter{
+public abstract class DiscreteFunctionPlotter extends Plotter {
 
     protected String[] labels;
     protected double[] highs, means, lows;
@@ -35,7 +35,7 @@ public abstract class DiscreteFunctionPlotter extends Plotter{
         return labels.length;
     }
 
-    public String getLabel(int i)  {
+    public String getLabel(int i) {
         try {
             return labels[i];
         } catch (ArrayIndexOutOfBoundsException e) {

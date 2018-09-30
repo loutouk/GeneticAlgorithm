@@ -21,7 +21,7 @@ public class FitnessCalc {
         double fitness = 0;
 
         // Error sum of squares
-        for(Vec2d point : data){
+        for (Vec2d point : data) {
             double difference = individual.getGenes().calculate(point.x) - point.y;
             fitness += (difference * difference);
         }

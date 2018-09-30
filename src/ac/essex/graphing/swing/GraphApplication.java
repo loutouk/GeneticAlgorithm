@@ -6,13 +6,12 @@ import ac.essex.graphing.plotting.PlotSettings;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
-import java.util.Vector;
 
 /**
  * Small application demonstrating the use of the graph panel in a swing gui.
@@ -64,10 +63,10 @@ public class GraphApplication extends JFrame implements ActionListener, Settings
 
         // Make sure Java Exits when the close button is clicked
         addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        }
+                              public void windowClosing(WindowEvent e) {
+                                  System.exit(0);
+                              }
+                          }
         );
 
         // Add the toolbar and graph to the frame
@@ -76,7 +75,7 @@ public class GraphApplication extends JFrame implements ActionListener, Settings
         c.add(graphPanel, BorderLayout.CENTER);
 
         // default size of the window, the Graph Panel will be slightly smaller.
-        setSize(640, 480);      
+        setSize(640, 480);
 
         // window title
         setTitle(Graph.VERSION);

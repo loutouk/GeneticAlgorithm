@@ -1,7 +1,5 @@
 package ac.essex.graphing.plotting;
 
-import ac.essex.graphing.plotting.Graph;
-
 import java.awt.*;
 
 /**

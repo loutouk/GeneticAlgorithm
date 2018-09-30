@@ -5,7 +5,7 @@ package GeneticAlgorithmPolynomial; /**
 
 import java.util.Random;
 
-public class Main {
+public class GUI {
 
     public static void main(String[] args) {
 
@@ -24,12 +24,12 @@ public class Main {
         // The higher the value MAX_COEFFICIENT is, the harder it is for the algorithm to find the solution
 
         Vec2d[] graph = new Vec2d[100];
-        for(int i=0 ; i<graph.length ; i++){
+        for (int i = 0; i < graph.length; i++) {
             graph[i] = new Vec2d();
             Random random = new Random();
             double randomValue = random.nextDouble() * 100 - random.nextDouble() * 100;
             graph[i].x = randomValue;
-            graph[i].y = 4 + (randomValue * 5) + (-2 * randomValue * randomValue) + (7 * randomValue * randomValue * randomValue)+ (-4 * randomValue * randomValue * randomValue * randomValue);
+            graph[i].y = 4 + (randomValue * 5) + (-2 * randomValue * randomValue) + (7 * randomValue * randomValue * randomValue) + (-4 * randomValue * randomValue * randomValue * randomValue);
         }
         FitnessCalc.setData(graph);
 
@@ -38,16 +38,16 @@ public class Main {
 
         // Evolve our population until we reach an optimum solution
         int generationCount = 0;
-        while (generationCount<2000 && Math.round(myPop.getFittest().getFitness()) != 0) {
+        while (generationCount < 2000 && Math.round(myPop.getFittest().getFitness()) != 0) {
             generationCount++;
             //System.out.println("Generation: " + generationCount + " Fittest: " + myPop.getFittest().getFitness());
             //GeneticAlgorithmPolynomial.IndividualExample current = (GeneticAlgorithmPolynomial.IndividualExample) myPop.getFittest();
             //System.out.println(current.getGenes());
             myPop = Algorithm.evolvePopulation(myPop);
         }
-        if(Math.round(myPop.getFittest().getFitness()) == 0){
+        if (Math.round(myPop.getFittest().getFitness()) == 0) {
             System.out.println("Solution found!");
-        }else{
+        } else {
             System.out.println("No solution found. Best result:");
         }
         System.out.println("Generation: " + generationCount);

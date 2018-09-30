@@ -10,7 +10,7 @@ public class PolynomialFour extends ContinuousFunctionPlotter {
 
     public double getY(double x) {
 
-        return (4 + (x * 5) + (-2 * x * x) + (7 * x * x * x)+ (-4 * x * x * x * x));
+        return (4 + (x * 5) + (-2 * x * x) + (7 * x * x * x) + (-4 * x * x * x * x));
     }
 }
 

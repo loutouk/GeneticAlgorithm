@@ -3,7 +3,6 @@ package ac.essex.graphing.charts.continuous;
 import ac.essex.graphing.plotting.ContinuousFunctionPlotter;
 
 /**
- * 
  * <p/>
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

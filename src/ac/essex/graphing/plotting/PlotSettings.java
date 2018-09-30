@@ -1,17 +1,16 @@
 package ac.essex.graphing.plotting;
 
 import java.awt.*;
-import java.text.Format;
-import java.text.DecimalFormat;
 import java.io.Serializable;
+import java.text.DecimalFormat;
+import java.text.Format;
 
 /**
- *
  * <p>
  * Determines the area that will be plotted, and all the appearance
  * parameters of the graph.
  * </p>
- *
+ * <p>
  * <p/>
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -110,10 +109,10 @@ public class PlotSettings implements Serializable {
     }
 
     public PlotSettings(double xMin, double xMax, double yMin, double yMax) {
-       this.minX = xMin;
-       this.maxX = xMax;
-       this.minY = yMin;
-       this.maxY = yMax;
+        this.minX = xMin;
+        this.maxX = xMax;
+        this.minY = yMin;
+        this.maxY = yMax;
     }
 
     /**

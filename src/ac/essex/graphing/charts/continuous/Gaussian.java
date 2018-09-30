@@ -6,7 +6,7 @@ import ac.essex.graphing.plotting.ContinuousFunctionPlotter;
  * <p>
  * Gaussian Function, allows you to plot a Gaussian Probability Density Function
  * </p>
- *
+ * <p>
  * <p>
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -19,9 +19,9 @@ import ac.essex.graphing.plotting.ContinuousFunctionPlotter;
  * GNU General Public License for more details at http://www.gnu.org
  * </p>
  *
- @author Olly Oechsle, University of Essex
- @version 1.0
-*/
+ * @author Olly Oechsle, University of Essex
+ * @version 1.0
+ */
 public class Gaussian extends ContinuousFunctionPlotter {
 
     protected double stdDeviation, variance, mean;

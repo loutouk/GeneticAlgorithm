@@ -10,7 +10,7 @@ import java.awt.event.*;
  * interactively drag the panel around to explore the graph
  * easily.
  * </p>
- *
+ * <p>
  * <p>
  * Easy to replace the standard Graph panel, just make sure your
  * GUI implements SettingsUpdateListener (called after the graph panel updates)
@@ -61,11 +61,11 @@ public class InteractiveGraphPanel extends GraphPanel {
                     double movementX = graph.getPlotWidth(e.getX() - mouseDownX);
                     double movementY = graph.getPlotHeight(e.getY() - mouseDownY);
 
-                    p.setMinX(minX-movementX);
-                    p.setMaxX(maxX-movementX);
-                    p.setMinY(minY+movementY);
-                    p.setMaxY(maxY+movementY);
-                   
+                    p.setMinX(minX - movementX);
+                    p.setMaxX(maxX - movementX);
+                    p.setMinY(minY + movementY);
+                    p.setMaxY(maxY + movementY);
+
                     repaint();
 
                 }
@@ -77,13 +77,13 @@ public class InteractiveGraphPanel extends GraphPanel {
         addMouseWheelListener(new MouseWheelListener() {
 
             public void mouseWheelMoved(MouseWheelEvent e) {
-                if (graph != null && !mouseDown)  {
+                if (graph != null && !mouseDown) {
 
                     PlotSettings p = graph.plotSettings;
 
                     double multiplier;
 
-                    if (e.getWheelRotation() < 0)  {
+                    if (e.getWheelRotation() < 0) {
                         // zoom in
                         multiplier = 0.1;
                     } else {
@@ -102,7 +102,7 @@ public class InteractiveGraphPanel extends GraphPanel {
 
                     listener.graphUpdated(graph.plotSettings);
                     repaint();
-                    
+
                 }
             }
 

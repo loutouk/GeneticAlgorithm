@@ -1,19 +1,18 @@
 package GeneticAlgorithmPolynomial;
 
 import ac.essex.graphing.charts.continuous.PolynomialFour;
-import ac.essex.graphing.charts.continuous.*;
+import ac.essex.graphing.charts.continuous.PolynomialGeneticAlgorithm;
 import ac.essex.graphing.plotting.Graph;
 import ac.essex.graphing.plotting.PlotSettings;
 import ac.essex.graphing.swing.GraphApplication;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
  * Demonstrates how to display a graph using JavaPlot.
- *
+ * <p>
  * <p>
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,8 +25,8 @@ import java.util.concurrent.TimeUnit;
  * GNU General Public License for more details at http://www.gnu.org
  * </p>
  *
- @author Olly Oechsle, University of Essex
- @version 1.0
+ * @author Olly Oechsle, University of Essex
+ * @version 1.0
  */
 public class Demo {
 
@@ -36,14 +35,13 @@ public class Demo {
     public static void main(String[] args) {
 
 
-
         Vec2d[] graph = new Vec2d[100];
-        for(int i=0 ; i<graph.length ; i++){
+        for (int i = 0; i < graph.length; i++) {
             graph[i] = new Vec2d();
             Random random = new Random();
             double randomValue = random.nextDouble() * 100 - random.nextDouble() * 100;
             graph[i].x = randomValue;
-            graph[i].y = 4 + (randomValue * 5) + (-2 * randomValue * randomValue) + (7 * randomValue * randomValue * randomValue)+ (-4 * randomValue * randomValue * randomValue * randomValue);
+            graph[i].y = 4 + (randomValue * 5) + (-2 * randomValue * randomValue) + (7 * randomValue * randomValue * randomValue) + (-4 * randomValue * randomValue * randomValue * randomValue);
         }
         FitnessCalc.setData(graph);
 
@@ -51,15 +49,9 @@ public class Demo {
         Population myPop = new Population(100, true);
         GraphApplication g = new GraphApplication(getExampleGraph2(myPop));
 
-        try {
-            TimeUnit.SECONDS.sleep(7);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         // Evolve our population until we reach an optimum solution
         int generationCount = 0;
-        while (generationCount<2000 && Math.round(myPop.getFittest().getFitness()) != 0) {
+        while (generationCount < 2000 && Math.round(myPop.getFittest().getFitness()) != 0) {
             generationCount++;
             //System.out.println("Generation: " + generationCount + " Fittest: " + myPop.getFittest().getFitness());
             //GeneticAlgorithmPolynomial.IndividualExample current = (GeneticAlgorithmPolynomial.IndividualExample) myPop.getFittest();
@@ -76,9 +68,9 @@ public class Demo {
                 e.printStackTrace();
             }
         }
-        if(Math.round(myPop.getFittest().getFitness()) == 0){
+        if (Math.round(myPop.getFittest().getFitness()) == 0) {
             System.out.println("Solution found!");
-        }else{
+        } else {
             System.out.println("No solution found. Best result:");
         }
         System.out.println("Generation: " + generationCount);
@@ -105,7 +97,7 @@ public class Demo {
         return graph;
     }
 
-    public static void editGraph(Population myPop, int generation){
+    public static void editGraph(Population myPop, int generation) {
         graph.plotSettings.setTitle("Generation " + generation);
         graph.functions.remove(1);
         graph.functions.add(new PolynomialGeneticAlgorithm(myPop));

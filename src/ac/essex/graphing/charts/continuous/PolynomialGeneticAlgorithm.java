@@ -1,13 +1,14 @@
 package ac.essex.graphing.charts.continuous;
 
+import GeneticAlgorithmPolynomial.IndividualExample;
+import GeneticAlgorithmPolynomial.Population;
 import ac.essex.graphing.plotting.ContinuousFunctionPlotter;
-import GeneticAlgorithmPolynomial.*;
 
 public class PolynomialGeneticAlgorithm extends ContinuousFunctionPlotter {
 
     private Population population;
 
-    public PolynomialGeneticAlgorithm(Population population){
+    public PolynomialGeneticAlgorithm(Population population) {
         this.population = population;
     }
 

@@ -1,7 +1,7 @@
 package ac.essex.graphing.charts.discrete;
 
-import ac.essex.graphing.plotting.Graph;
 import ac.essex.graphing.plotting.DiscreteFunctionPlotter;
+import ac.essex.graphing.plotting.Graph;
 
 import java.awt.*;
 

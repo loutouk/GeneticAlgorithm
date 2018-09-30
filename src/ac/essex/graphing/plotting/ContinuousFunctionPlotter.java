@@ -1,15 +1,11 @@
 package ac.essex.graphing.plotting;
 
-import ac.essex.graphing.plotting.Plotter;
-import ac.essex.graphing.plotting.Graph;
-
 import java.awt.*;
 
 /**
- *
  * Graphable Function
  * Basic interface allowing mathematical functions to talk to the Graph renderer.
- *
+ * <p>
  * <p>
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -22,9 +18,9 @@ import java.awt.*;
  * GNU General Public License for more details at http://www.gnu.org
  * </p>
  *
- @author Olly Oechsle, University of Essex
- @version 1.0
-*/
+ * @author Olly Oechsle, University of Essex
+ * @version 1.0
+ */
 public abstract class ContinuousFunctionPlotter extends Plotter {
 
     public abstract double getY(double x);
@@ -60,7 +56,8 @@ public abstract class ContinuousFunctionPlotter extends Plotter {
             /**
              * Draw a line between two points
              */
-            if (!first && y <= graph.plotSettings.getMaxY() && y >= graph.plotSettings.getMinY()) graph.drawLine(g, prevX, prevY, x, y);
+            if (!first && y <= graph.plotSettings.getMaxY() && y >= graph.plotSettings.getMinY())
+                graph.drawLine(g, prevX, prevY, x, y);
 
             /**
              * Remember the last two values

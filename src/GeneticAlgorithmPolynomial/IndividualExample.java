@@ -7,29 +7,19 @@ import java.util.Random;
 
 public class IndividualExample extends Individual {
 
-    // number of degrees for the polynomial
-    // the larger it is, the harder it is to find the solution
-    private static int defaultGeneLength = 10;
     // the maximum absolute value of the possible coefficients
     // the larger it is, the harder it is to find the solution
     private static final int MAX_COEFFICIENT = 10;
+    // number of degrees for the polynomial
+    // the larger it is, the harder it is to find the solution
+    private static int defaultGeneLength = 10;
     private Polynomial genes;
     private double fitness = -1;
 
-    public IndividualExample(){
+    public IndividualExample() {
         int[] array = new int[defaultGeneLength];
         for (int i = 0; i < defaultGeneLength; i++) {
-            int value = getRandom(-MAX_COEFFICIENT,MAX_COEFFICIENT);
-            array[i] = value;
-        }
-        genes = new Polynomial(array);
-    }
-
-    // Create a random individual
-    public void generateIndividual() {
-        int[] array = new int[defaultGeneLength];
-        for (int i = 0; i < defaultGeneLength; i++) {
-            int value = getRandom(-MAX_COEFFICIENT,MAX_COEFFICIENT);
+            int value = getRandom(-MAX_COEFFICIENT, MAX_COEFFICIENT);
             array[i] = value;
         }
         genes = new Polynomial(array);
@@ -39,6 +29,16 @@ public class IndividualExample extends Individual {
     // Use this if you want to create individuals with different gene lengths
     public static void setDefaultGeneLength(int length) {
         defaultGeneLength = length;
+    }
+
+    // Create a random individual
+    public void generateIndividual() {
+        int[] array = new int[defaultGeneLength];
+        for (int i = 0; i < defaultGeneLength; i++) {
+            int value = getRandom(-MAX_COEFFICIENT, MAX_COEFFICIENT);
+            array[i] = value;
+        }
+        genes = new Polynomial(array);
     }
 
     public int getGene(int index) {
@@ -88,7 +88,7 @@ public class IndividualExample extends Individual {
         for (int i = 0; i < this.genes.size(); i++) {
             if (Math.random() <= Algorithm.mutationRate) {
                 // Create random gene
-                int value = getRandom(-MAX_COEFFICIENT,MAX_COEFFICIENT);
+                int value = getRandom(-MAX_COEFFICIENT, MAX_COEFFICIENT);
                 this.setGene(i, value);
             }
         }
@@ -97,7 +97,7 @@ public class IndividualExample extends Individual {
     private int getRandom(int start, int end) {
         Random rand = new Random();
         // value is between start and end
-        int value = rand.nextInt(end-start);
+        int value = rand.nextInt(end - start);
         value += start;
         return value;
     }
