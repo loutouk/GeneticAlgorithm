@@ -7,9 +7,12 @@ import java.util.ArrayList;
 
 public class Polynomial {
 
-    // Map of <Index, Coefficient>
-    // For 2 terms : 2 + 3x --> Map(0) = 2 and Map(1) = 3
-    // For 3 terms : 7 + x + 4x² --> Map(0) = 7 and Map(1) = 1 and Map(2) = 4
+    // The first term is the constant, and then the coefficient
+    // They are ordered by degree / power
+    // Example for f(x) = 3 + 4x - 2x^2
+    // terms.get(0) = 3
+    // terms.get(1) = 4
+    // terms.get(2) = -2
     private ArrayList<Integer> terms;
 
     public Polynomial(int... coefficients){
